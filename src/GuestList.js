@@ -27,6 +27,6 @@ const GuestList = props =>
       <button>edit</button>
       <button>remove</button>
     </li>
-  </ul>
+  </ul>;
 
 export default GuestList;
