@@ -16,6 +16,7 @@ state = {
   ]
 }
 
+//Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
 
   render() {
