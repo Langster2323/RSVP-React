@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//Sublist Component...
+/*Sublist Component...
+Successfully rendering itself
+with data from the state.*/
 const GuestList = props =>
 
   <ul>
