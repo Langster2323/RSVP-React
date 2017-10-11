@@ -57,7 +57,7 @@ getTotalInvited = () => this.state.guests.length;
               </tr>
             </tbody>
           </table>
-          <GuestList />
+          <GuestList guests={this.state.guests}/>
         </div>
       </div>
     );
