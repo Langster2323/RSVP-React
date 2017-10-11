@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+//Property initializer...
+state = {
+  guests: [
+    {
+      name: 'Treasure',
+      isConfirmed: false
+    },
+    {
+      name: 'Keem',
+      isConfirmed: true
+    }
+  ]
+}
+
+getTotalInvited = () => this.state.guests.length;
+
   render() {
     return (
       <div className="App">
