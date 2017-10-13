@@ -19,7 +19,29 @@ state = {
       isConfirmed: true
     }
   ]
-}
+};
+/*Event Handler ...
+  Ony want to change one member of the
+  array and leave the rest alone.
+  So I'm using the map method
+  going through the existing array.
+  Making a change if the index matches.
+ */
+
+ /*  The Spread operater transfers the key
+   and values from one object to another.*/
+toggleConfirmationAt = indexToChange =>
+  this.setState({
+    guests: this.state.guests.map((guest, index) => {
+      if (index === indexToChange) {
+        return {
+          ...guest,
+          isConfirmed: !guest.isConfirmed
+        };
+      }
+      return guest;
+    })
+  });
 
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
