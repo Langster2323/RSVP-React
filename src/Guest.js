@@ -13,7 +13,8 @@ const Guest = props =>
 
 Guest.propTypes = {
   name: PropTypes.string.isRequired,
-  isConfirmed: PropTypes.bool.isRequired
+  isConfirmed: PropTypes.bool.isRequired,
+  handlConfirmation: PropTypes.func.isRequired
 }
 
 export default Guest;
