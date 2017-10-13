@@ -7,16 +7,21 @@ import Guest from './Guest';
 Successfully rendering itself
 with data from the state.*/
 const GuestList = props =>
-
+/*toggleConfirmationAt... Closure...
+*/
   <ul>
   {props.guests.map((guest, index) =>
-    <Guest key={index} name={guest.name}
-    isConfirmed={guest.isConfirmed} />
+    <Guest
+    key={index}
+    name={guest.name}
+    isConfirmed={guest.isConfirmed}
+    handleConfirmation={() => props.toggleConfirmationAt(index)} />
     )}
   </ul>;
 
   GuestList.propTypes = {
-    guests: PropTypes.array.isRequired
+    guests: PropTypes.array.isRequired,
+    toggleConfirmationAt: Proptypes.func.isRequired
   }
 
 export default GuestList;
