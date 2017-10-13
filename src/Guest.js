@@ -8,7 +8,7 @@ const Guest = props =>
     <input
     type="checkbox"
     checked={props.isConfirmed}
-    OnChange={props.handleConfirmation} /> Confirmed
+    onChange={props.handleConfirmation} /> Confirmed
   </label>
   <button>edit</button>
   <button>remove</button>
@@ -18,6 +18,6 @@ Guest.propTypes = {
   name: PropTypes.string.isRequired,
   isConfirmed: PropTypes.bool.isRequired,
   handleConfirmation: PropTypes.func.isRequired
-}
+};
 
 export default Guest;

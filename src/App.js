@@ -20,16 +20,7 @@ state = {
     }
   ]
 };
-/*Event Handler ...
-  Ony want to change one member of the
-  array and leave the rest alone.
-  So I'm using the map method
-  going through the existing array.
-  Making a change if the index matches.
- */
 
- /*  The Spread operater transfers the key
-   and values from one object to another.*/
 toggleConfirmationAt = indexToChange =>
   this.setState({
     guests: this.state.guests.map((guest, index) => {

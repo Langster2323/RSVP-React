@@ -22,6 +22,6 @@ const GuestList = props =>
   GuestList.propTypes = {
     guests: PropTypes.array.isRequired,
     toggleConfirmationAt: PropTypes.func.isRequired
-  }
+  };
 
 export default GuestList;
