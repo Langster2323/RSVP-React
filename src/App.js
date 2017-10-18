@@ -8,15 +8,18 @@ state = {
   guests: [
     {
       name: 'Treasure',
-      isConfirmed: false
+      isConfirmed: false,
+      isEditing: false
     },
     {
       name: 'Keem',
-      isConfirmed: true
+      isConfirmed: true,
+      isEditing: false
     },
     {
       name: 'Don',
-      isConfirmed: true
+      isConfirmed: true,
+      isEditing: true
     }
   ]
 };
