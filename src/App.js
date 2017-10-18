@@ -24,18 +24,24 @@ state = {
   ]
 };
 
-toggleConfirmationAt = indexToChange =>
+toggleGuestPropertyAt = (property, indexToChange) =>
   this.setState({
     guests: this.state.guests.map((guest, index) => {
       if (index === indexToChange) {
         return {
           ...guest,
-          isConfirmed: !guest.isConfirmed
+          [property]: !guest[property]
         };
       }
       return guest;
     })
   });
+
+  toggleConfirmationAt = index =>
+    this.toggleGuestPropertyAt("isConfirmed", index);
+
+  toggleEditingAt = index =>
+    this.toggleGuestPropertyAt("isEditing", index);
 
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
@@ -79,7 +85,8 @@ getTotalInvited = () => this.state.guests.length;
           </table>
           <GuestList
           guests={this.state.guests}
-          toggleConfirmationAt={this.toggleConfirmationAt} />
+          toggleConfirmationAt={this.toggleConfirmationAt}
+          toggleEditingAt={this.toggleEditingAt} />
         </div>
       </div>
     );
