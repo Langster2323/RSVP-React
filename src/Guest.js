@@ -5,7 +5,9 @@ import GuestName from './GuestName';
 
 const Guest = props =>
 <li>
-  <GuestName isEditing={props.isEditing}>
+  <GuestName
+  isEditing={props.isEditing}
+  handleNameEdits={e => props.setName(e.target.value)}>
   {props.name}
   </GuestName>
   <label>
