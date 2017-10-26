@@ -19,7 +19,7 @@ const GuestName = props => {
 
 GuestName.propTypes = {
   isEditing: PropTypes.bool.isRequired,
-  handleNameEdits.func.isRequired
+  handleNameEdits: PropTypes.func.isRequired
 };
 
 export default GuestName;

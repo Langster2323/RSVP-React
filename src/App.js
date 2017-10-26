@@ -37,11 +37,24 @@ toggleGuestPropertyAt = (property, indexToChange) =>
     })
   });
 
-  toggleConfirmationAt = index =>
-    this.toggleGuestPropertyAt("isConfirmed", index);
+toggleConfirmationAt = index =>
+  this.toggleGuestPropertyAt("isConfirmed", index);
 
   toggleEditingAt = index =>
     this.toggleGuestPropertyAt("isEditing", index);
+
+  setNameAt = (name, indexToChange) =>
+    this.setState({
+      guests: this.state.guests.map((guest, index) => {
+        if (index === indexToChange) {
+          return {
+            ...guest,
+            name
+          };
+        }
+        return guest;
+      })
+    });
 
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
