@@ -86,7 +86,8 @@ getTotalInvited = () => this.state.guests.length;
           <GuestList
           guests={this.state.guests}
           toggleConfirmationAt={this.toggleConfirmationAt}
-          toggleEditingAt={this.toggleEditingAt} />
+          toggleEditingAt={this.toggleEditingAt}
+          setNameAt={this.setNameAt} />
         </div>
       </div>
     );
