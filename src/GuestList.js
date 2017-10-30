@@ -10,7 +10,9 @@ const GuestList = props =>
 /*toggleConfirmationAt... Closure...
 */
   <ul>
-  {props.guests.map((guest, index) =>
+  {props.guests
+    .filter(guest => !props.isFiltered || guest.isConfirmed)
+    .map((guest, index) =>
     <Guest
     key={index}
     name={guest.name}
