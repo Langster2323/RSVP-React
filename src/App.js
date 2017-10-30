@@ -81,7 +81,10 @@ getTotalInvited = () => this.state.guests.length;
           <div>
             <h2>Invitees</h2>
             <label>
-              <input type="checkbox" /> Hide those who have not responded
+              <input
+              type="checkbox"
+              onChange={this.toggleFilter}
+              checked={this.state.isFiltered} /> Hide those who have not responded
             </label>
           </div>
           <table className="counter">
