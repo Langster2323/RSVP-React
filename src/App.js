@@ -5,6 +5,7 @@ import GuestList from './GuestList';
 class App extends Component {
 //Property initializer...
 state = {
+  isFiltered: false,
   guests: [
     {
       name: 'Treasure',
@@ -55,6 +56,9 @@ toggleConfirmationAt = index =>
         return guest;
       })
     });
+
+    toggleFilter = () =>
+    this.setState({ isFiltered: !this.state.isFiltered});
 
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
