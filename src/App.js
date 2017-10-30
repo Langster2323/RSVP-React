@@ -107,7 +107,8 @@ getTotalInvited = () => this.state.guests.length;
           guests={this.state.guests}
           toggleConfirmationAt={this.toggleConfirmationAt}
           toggleEditingAt={this.toggleEditingAt}
-          setNameAt={this.setNameAt} />
+          setNameAt={this.setNameAt}
+          isFiltered={this.state.isFiltered} />
         </div>
       </div>
     );
