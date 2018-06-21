@@ -64,6 +64,21 @@ toggleConfirmationAt = index =>
     handleNameInput = e =>
     this.setState({ pendingGuest: e.target.value });
 
+    newGuestSubmitHandler = e => {
+      e.preventDefault();
+      this.setState({
+        guests: [
+          {
+            name: this.state.pendingGuest,
+            isConfirmed: false,
+            isEditing: false
+          },
+          ...this.state.guests
+        ],
+        pendingGuest: ''
+      });
+    }
+
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
 
@@ -76,7 +91,7 @@ getTotalInvited = () => this.state.guests.length;
         <header>
           <h1>RSVP</h1>
           <p>Reserve App</p>
-          <form>
+          <form onSubmit={this.newGuestSubmitHandler}>
               <input
               type="text"
               onChange={this.handleNameInput}
