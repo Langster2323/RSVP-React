@@ -6,6 +6,7 @@ class App extends Component {
 //Property initializer...
 state = {
   isFiltered: false,
+  pendingGuest: "",
   guests: [
     {
       name: 'Treasure',
@@ -24,7 +25,7 @@ state = {
     }
   ]
 };
-
+//Example of a reducer...
 toggleGuestPropertyAt = (property, indexToChange) =>
   this.setState({
     guests: this.state.guests.map((guest, index) => {
@@ -60,6 +61,9 @@ toggleConfirmationAt = index =>
     toggleFilter = () =>
     this.setState({ isFiltered: !this.state.isFiltered});
 
+    handleNameInput = e =>
+    this.setState({ pendingGuest: e.target.value });
+
 //Returns the length of the guest array in the state object...
 getTotalInvited = () => this.state.guests.length;
 
@@ -73,7 +77,11 @@ getTotalInvited = () => this.state.guests.length;
           <h1>RSVP</h1>
           <p>Reserve App</p>
           <form>
-              <input type="text" value="Safia" placeholder="Invite Someone" />
+              <input
+              type="text"
+              onChange={this.handleNameInput}
+              value={this.state.pendingGuest}
+              placeholder="Invite Someone" />
               <button type="submit" name="submit" value="submit">Submit</button>
           </form>
         </header>
