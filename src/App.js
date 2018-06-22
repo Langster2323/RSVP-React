@@ -42,6 +42,14 @@ toggleGuestPropertyAt = (property, indexToChange) =>
 toggleConfirmationAt = index =>
   this.toggleGuestPropertyAt("isConfirmed", index);
 
+  removeGuestAt = index =>
+  this.setState({
+    guests: [
+      ...this.state.guests.slice(0, index),
+      ...this.state.guests.slice(index + 1)
+    ]
+  })
+
   toggleEditingAt = index =>
     this.toggleGuestPropertyAt("isEditing", index);
 
@@ -131,7 +139,8 @@ getTotalInvited = () => this.state.guests.length;
           toggleConfirmationAt={this.toggleConfirmationAt}
           toggleEditingAt={this.toggleEditingAt}
           setNameAt={this.setNameAt}
-          isFiltered={this.state.isFiltered} />
+          isFiltered={this.state.isFiltered}
+          removeGuestAt={this.removeGuestAt} />
         </div>
       </div>
     );
