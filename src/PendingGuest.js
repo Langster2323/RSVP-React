@@ -9,7 +9,7 @@ const PendingGuest = props => {
       {props.name}
       </span>
     </li>
-  );
+    );
   }
   return null;
 };
