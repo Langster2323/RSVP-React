@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Guest from './Guest';
+import PendingGuest from './PendingGuest';
 
 /*Sublist Component...
 Successfully rendering itself
@@ -10,6 +11,7 @@ const GuestList = props =>
 /*toggleConfirmationAt... Closure...
 */
   <ul>
+  <PendingGuest name={props.pendingGuest}/>
   {props.guests
     .filter(guest => !props.isFiltered || guest.isConfirmed)
     .map((guest, index) =>
@@ -31,7 +33,8 @@ const GuestList = props =>
     toggleEditingAt: PropTypes.func.isRequired,
     setNameAt: PropTypes.func.isRequired,
     isFiltered: PropTypes.bool.isRequired,
-    removeGuestAt: PropTypes.func.isRequired
+    removeGuestAt: PropTypes.func.isRequired,
+    pendingGuest: PropTypes.string.isRequired
   };
 
 export default GuestList;
