@@ -7,7 +7,7 @@ const PendingGuest = props => {
     <li className="pending">
       <span>
       {props.name}
-      </GuestName>
+      </span>
     </li>
   );
   }
