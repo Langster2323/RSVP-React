@@ -12,7 +12,7 @@ const ConfirmedFilter = props =>
     </label>
   </div>
 
-  ConfirmedFilter.PropTypes = {
+  ConfirmedFilter.propTypes = {
     toggleFilter: PropTypes.func.isRequired,
     isFiltered: PropTypes.bool.isRequired
   }
