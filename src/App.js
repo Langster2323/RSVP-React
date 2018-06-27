@@ -11,11 +11,19 @@ state = {
   pendingGuest: "",
   guests: []
 };
+//Fixing filter bug...
+lastGuestId = 0;
+
+newGuestId = () => {
+  const id = this.lastGuestId;
+  this.lastGuestId += 1;
+  return id;
+};
 //Example of a reducer...
-toggleGuestPropertyAt = (property, indexToChange) =>
+toggleGuestProperty = (property, id) =>
   this.setState({
-    guests: this.state.guests.map((guest, index) => {
-      if (index === indexToChange) {
+    guests: this.state.guests.map(guest => {
+      if (id === guest.id) {
         return {
           ...guest,
           [property]: !guest[property]
@@ -25,24 +33,21 @@ toggleGuestPropertyAt = (property, indexToChange) =>
     })
   });
 
-toggleConfirmationAt = index =>
-  this.toggleGuestPropertyAt("isConfirmed", index);
+toggleConfirmation = id =>
+  this.toggleGuestProperty("isConfirmed", id);
 
-  removeGuestAt = index =>
+  removeGuest = id =>
   this.setState({
-    guests: [
-      ...this.state.guests.slice(0, index),
-      ...this.state.guests.slice(index + 1)
-    ]
+    guests: this.state.guests.filter(guest => id !== guest.id)
   });
 
-  toggleEditingAt = index =>
-    this.toggleGuestPropertyAt("isEditing", index);
+  toggleEditing = id =>
+    this.toggleGuestProperty("isEditing", id);
 
-  setNameAt = (name, indexToChange) =>
+  setName = (name, indexToChange) =>
     this.setState({
-      guests: this.state.guests.map((guest, index) => {
-        if (index === indexToChange) {
+      guests: this.state.guests.map(guest => {
+        if (id === guest.id) {
           return {
             ...guest,
             name
@@ -60,12 +65,14 @@ toggleConfirmationAt = index =>
 
     newGuestSubmitHandler = e => {
       e.preventDefault();
+      const id = this.newGuestId();
       this.setState({
         guests: [
           {
             name: this.state.pendingGuest,
             isConfirmed: false,
             isEditing: false
+            id
           },
           ...this.state.guests
         ],
@@ -101,11 +108,12 @@ getAttendingGuests = () => this.state.guests.reduce(
         numberAttending={this.numberAttending}
         numberUnconfirmed={this.numberUnconfirmed}
         guests={this.state.guests}
-        toggleConfirmationAt={this.toggleConfirmationAt}
-        toggleEditingAt={this.toggleEditingAt}
-        setNameAt={this.setNameAt}
-        removeGuestAt={this.removeGuestAt}
-        pendingGuest={this.state.pendingGuest} />
+        toggleConfirmation={this.toggleConfirmation}
+        toggleEditing={this.toggleEditing}
+        setName={this.setName}
+        removeGuest={this.removeGuest}
+        pendingGuest={this.state.pendingGuest}
+        newGuestId={this.newGuestId} />
       </div>
     );
   }
