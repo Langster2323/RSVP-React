@@ -15,13 +15,13 @@ const MainContent = props =>
   numberAttending={props.numberAttending}
   numberUnconfirmed={props.numberUnconfirmed} />
   <GuestList
-  guests={this.state.guests}
-  toggleConfirmationAt={this.toggleConfirmationAt}
+  guests={props.guests}
+  toggleConfirmationAt={props.toggleConfirmationAt}
   toggleEditingAt={this.toggleEditingAt}
-  setNameAt={this.setNameAt}
-  isFiltered={this.state.isFiltered}
-  removeGuestAt={this.removeGuestAt}
-  pendingGuest={this.state.pendingGuest} />
+  setNameAt={props.setNameAt}
+  isFiltered={props.isFiltered}
+  removeGuestAt={props.removeGuestAt}
+  pendingGuest={props.pendingGuest} />
 </div>
 
 MainContent.propTypes = {
