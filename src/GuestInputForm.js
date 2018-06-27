@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const GuestInputForm = props =>
-  <form onSubmit={this.newGuestSubmitHandler}>
+  <form onSubmit={props.newGuestSubmitHandler}>
       <input
       type="text"
-      onChange={this.handleNameInput}
-      value={this.state.pendingGuest}
+      onChange={props.handleNameInput}
+      value={props.pendingGuest}
       placeholder="Invite Someone" />
       <button type="submit" name="submit" value="submit">Submit</button>
   </form>
