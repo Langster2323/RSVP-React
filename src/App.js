@@ -9,7 +9,7 @@ class App extends Component {
 state = {
   isFiltered: false,
   pendingGuest: "",
-  guests: []
+  guests: [],
 };
 //Fixing filter bug...
 lastGuestId = 0;
@@ -44,7 +44,7 @@ toggleConfirmation = id =>
   toggleEditing = id =>
     this.toggleGuestProperty("isEditing", id);
 
-  setName = (name, indexToChange) =>
+  setName = (name, id) =>
     this.setState({
       guests: this.state.guests.map(guest => {
         if (id === guest.id) {
@@ -71,7 +71,7 @@ toggleConfirmation = id =>
           {
             name: this.state.pendingGuest,
             isConfirmed: false,
-            isEditing: false
+            isEditing: false,
             id
           },
           ...this.state.guests
