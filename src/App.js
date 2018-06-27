@@ -9,23 +9,7 @@ class App extends Component {
 state = {
   isFiltered: false,
   pendingGuest: "",
-  guests: [
-    {
-      name: 'Treasure',
-      isConfirmed: false,
-      isEditing: false
-    },
-    {
-      name: 'Keem',
-      isConfirmed: true,
-      isEditing: false
-    },
-    {
-      name: 'Don',
-      isConfirmed: true,
-      isEditing: true
-    }
-  ]
+  guests: []
 };
 //Example of a reducer...
 toggleGuestPropertyAt = (property, indexToChange) =>
