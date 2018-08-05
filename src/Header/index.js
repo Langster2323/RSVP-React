@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import GuestInputForm from './GuestInputForm';
 
-const Header = props =>
+const Header = ({ newGuestSubmitHandler, pendingGuest, handleNameInput }) =>
   <header>
     <h1>RSVP</h1>
     <p>Reserve App</p>
     <GuestInputForm
-    newGuestSubmitHandler={props.newGuestSubmitHandler}
-    pendingGuest={props.pendingGuest}
-    handleNameInput={props.handleNameInput} />
+    newGuestSubmitHandler={newGuestSubmitHandler}
+    pendingGuest={pendingGuest}
+    handleNameInput={handleNameInput} />
   </header>
 
   Header.propTypes = {
