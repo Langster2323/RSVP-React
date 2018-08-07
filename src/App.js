@@ -104,9 +104,9 @@ getAttendingGuests = () => this.state.guests.reduce(
         <MainContent
         toggleFilter={this.toggleFilter}
         isFiltered={this.state.isFiltered}
-        totalInvited={this.totalInvited}
-        numberAttending={this.numberAttending}
-        numberUnconfirmed={this.numberUnconfirmed}
+        totalInvited={totalInvited}
+        numberAttending={numberAttending}
+        numberUnconfirmed={numberUnconfirmed}
         guests={this.state.guests}
         toggleConfirmation={this.toggleConfirmation}
         toggleEditing={this.toggleEditing}

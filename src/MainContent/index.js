@@ -17,7 +17,7 @@ const MainContent = props =>
   <GuestList
   guests={props.guests}
   toggleConfirmation={props.toggleConfirmation}
-  toggleEditing={this.toggleEditing}
+  toggleEditing={props.toggleEditing}
   setName={props.setName}
   isFiltered={props.isFiltered}
   removeGuest={props.removeGuest}
