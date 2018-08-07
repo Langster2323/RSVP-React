@@ -8,7 +8,7 @@ import PendingGuest from './PendingGuest';
 Successfully rendering itself
 with data from the state.*/
 const GuestList = props =>
-/*toggleConfirmationAt... Closure...
+/*toggleConfirmation... Closure...
 */
   <ul>
   <PendingGuest name={props.pendingGuest}/>
@@ -20,20 +20,20 @@ const GuestList = props =>
     name={guest.name}
     isConfirmed={guest.isConfirmed}
     isEditing={guest.isEditing}
-    handleConfirmation={() => props.toggleConfirmationAt(guest.id)}
-    handleToggleEditing={() => props.toggleEditingAt(guest.id)}
-    setName={text => props.setNameAt(text, guest.id)}
-    handleRemove={() => props.removeGuestAt(guest.id)} />
+    handleConfirmation={() => props.toggleConfirmation(guest.id)}
+    handleToggleEditing={() => props.toggleEditing(guest.id)}
+    setName={text => props.setName(text, guest.id)}
+    handleRemove={() => props.removeGuest(guest.id)} />
     )}
   </ul>;
 
   GuestList.propTypes = {
     guests: PropTypes.array.isRequired,
-    toggleConfirmationAt: PropTypes.func.isRequired,
-    toggleEditingAt: PropTypes.func.isRequired,
-    setNameAt: PropTypes.func.isRequired,
+    toggleConfirmation: PropTypes.func.isRequired,
+    toggleEditing: PropTypes.func.isRequired,
+    setName: PropTypes.func.isRequired,
     isFiltered: PropTypes.bool.isRequired,
-    removeGuestAt: PropTypes.func.isRequired,
+    removeGuest: PropTypes.func.isRequired,
     pendingGuest: PropTypes.string.isRequired
   };
 
